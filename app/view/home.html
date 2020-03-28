@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;" />
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <link
+      rel="stylesheet"
+      href="http://www.jq22.com/demo/Animate201707101048/animate.min.css"
+    /> -->
+  </head>
+
+  <body>
+    <img src="/public/logo.png" />
+  </body>
+  <script>
+    $(function() {
+      // $(".btn-resync").click(function() {
+      //   const qhqid = $("#qhqid4resync").val();
+      //   $.ajax({
+      //     type: "POST",
+      //     url: `./product/resync/${qhqid}`,
+      //     //添加额外的请求头
+      //     headers: { "x-csrf-token": getCookie("csrfToken") },
+      //     success: function(res) {
+      //       logs();
+      //     }
+      //   });
+      // });
+    });
+
+    function getCookie(name) {
+      var arr,
+        reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+      if ((arr = document.cookie.match(reg))) return unescape(arr[2]);
+      else return null;
+    }
+  </script>
+  <style>
+    img {
+      width: 100%;
+    }
+  </style>
+</html>

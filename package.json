@@ -1,0 +1,61 @@
+{
+  "name": "xmqhq-data-collection",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "egg": "^2.15.1",
+    "egg-full-email": "^1.2.5",
+    "egg-mysql": "^3.0.0",
+    "egg-onerror": "^2.1.0",
+    "egg-passport": "^2.1.1",
+    "egg-passport-jwt": "^1.0.0",
+    "egg-passport-local": "^1.2.1",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize": "^5.2.1",
+    "egg-view-nunjucks": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0",
+    "node-uuid": "^1.4.8",
+    "passport-local": "^1.0.0",
+    "silly-datetime": "^0.1.2"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0",
+    "sequelize-cli": "^5.5.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-xmqhq-data-collection --ignore-stderr",
+    "stop": "egg-scripts stop --title=egg-server-xmqhq-data-collection",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT"
+}

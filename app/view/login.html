@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;" />
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <h4>QS.Xmark.Top</h4>
+    <form class="login_panel">
+      <div>账号：<input id="username" autocomplete="true" /></div>
+      <div>密码：<input type="password" id="password" /></div>
+      <button class="btn_login">登录</button>
+    </form>
+  </body>
+  <script>
+    $(function() {
+      $(".btn_login").click(function() {
+        $.ajax({
+          type: "POST",
+          url: "./login",
+          // dataType: "json",
+          // contentType: "application/json",
+          headers: { "x-csrf-token": getCookie("csrfToken") },
+          data: {
+            username: $("#username").val(),
+            password: $("#password").val()
+          }
+        })
+          .done(function(res, status) {
+            if (res.code === 0) {
+              
+            } else {
+              console.log("无权限！请联系管理员获取权限");
+            }
+          })
+          .fail(function() {
+            console.log("登录失败");
+          });
+        return false;
+      });
+    });
+    function getCookie(name) {
+      var arr,
+        reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+      if ((arr = document.cookie.match(reg))) return unescape(arr[2]);
+      else return null;
+    }
+  </script>
+  <style>
+    body {
+      text-align: center;
+      padding: 80px;
+    }
+
+    .login_panel {
+      width: 500px;
+      height: 250px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .login_panel input {
+      width: 300px;
+      height: 38px;
+      margin: 10px;
+    }
+    .btn_login {
+      margin-top: 50px;
+      width: 300px;
+      height: 38px;
+    }
+  </style>
+</html>
